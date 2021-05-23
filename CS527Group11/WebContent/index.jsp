@@ -72,7 +72,7 @@
 		<%
 			String url_Mysql = "jdbc:mysql://database-cs527.cybkb98jpdsd.us-east-2.rds.amazonaws.com:3306/instacart";
 			String url_Redshift = "jdbc:redshift://redshift-cluster-527.cguppunjr2hy.us-east-2.redshift.amazonaws.com:5439/database-527";
-			String url_MongoDB = "jdbc:mongodb://3.140.255.13/Instacart";
+			String url_MongoDB = "jdbc:mongo://localhost:27017/Instacart";
 
 			String username_Mysql = "admin";
 			String username_Redshift = "admin";
@@ -127,7 +127,6 @@
 						else{
 							conn = DriverManager.getConnection(url, username, password);
 						}
-						// Statement stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
 						PreparedStatement stmt=conn.prepareStatement(sql);
 						stmt.setMaxRows(50);
 						boolean hasResultSet = stmt.execute();
